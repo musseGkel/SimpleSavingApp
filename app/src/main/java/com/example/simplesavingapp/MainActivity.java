@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         });
         loadInfo();
     }
-
     public void saveInfo(View view){
         usernameText = String.valueOf(username.getText());
         locationText= String.valueOf(location.getText());
@@ -72,11 +71,9 @@ public class MainActivity extends AppCompatActivity {
     public void graySwitch(View view){
         SharedPreferences.Editor preferenceEditor= sharedPreferences.edit();
         boolean isChecked = graySwitch.isChecked();
-        System.out.println("isChecked: "+isChecked);
         if(isChecked){
             getWindow().getDecorView().setBackgroundColor(Color.GRAY);
         } else{
-            System.out.println("else isChecked: " + graySwitch.isChecked());
             getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         }
         preferenceEditor.putBoolean("grayBackground",isChecked);

@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="-1dp"
-    tools:layout_editor_absoluteY="135dp">
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="-14dp">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="46dp"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/userNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,77 +26,67 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="31dp"
         android:text="Username"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/userNameInput"
         app:layout_constraintEnd_toStartOf="@+id/userNameInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/userNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="14dp"
+        android:layout_marginBottom="31dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/locationInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="42dp"
         android:layout_marginStart="43dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="31dp"
         android:text="Location"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/clearButton"
+        app:layout_constraintBaseline_toBaselineOf="@+id/locationInput"
         app:layout_constraintEnd_toStartOf="@+id/locationInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/locationInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="14dp"
+        android:layout_marginBottom="115dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/userNameInput" />
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="73dp"
-        android:layout_marginEnd="92dp"
+        android:layout_width="175dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="54dp"
         android:onClick="saveInfo"
         android:text="Save!"
-        app:layout_constraintBaseline_toBaselineOf="@+id/clearButton"
-        app:layout_constraintEnd_toStartOf="@+id/clearButton"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/clearButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="74dp"
-        android:onClick="clearInfo"
-        android:text="Clear!"
+        android:textColor="#FDFDFD"
         app:layout_constraintBottom_toTopOf="@+id/graySwitch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/saveButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationInput" />
 
     <Button
         android:id="@+id/closeApp"
@@ -114,12 +104,25 @@
         android:id="@+id/graySwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
         android:layout_marginBottom="105dp"
         android:onClick="graySwitch"
         android:text="Gray Background"
         app:layout_constraintBottom_toTopOf="@+id/closeApp"
+        app:layout_constraintEnd_toEndOf="@+id/clearButton"
+        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="175dp"
+        android:layout_height="114dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="clearInfo"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearButton" />
+        app:layout_constraintStart_toEndOf="@+id/saveButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
